@@ -25,7 +25,7 @@ return {
 Default configuration:
 
 ```lua
----@class GnomeUI.Option
+---@class Gnome.Option
 M.options = {
   color_dialog = {
     default_format = "hex", -- rgb | rgba | hex | HEX

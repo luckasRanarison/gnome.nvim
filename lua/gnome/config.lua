@@ -1,6 +1,6 @@
 local M = {}
 
----@class GnomeUI.Option
+---@class Gnome.Option
 M.options = {
   color_dialog = {
     -- TODO: add support for Gtk4

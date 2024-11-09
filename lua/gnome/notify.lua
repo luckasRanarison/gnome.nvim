@@ -2,7 +2,7 @@ local M = {}
 
 ---@return fun(...: string)
 local notify_fn = function(level)
-  return function(...) vim.notify("[gnome] " .. table.concat({ ... }), level) end
+  return function(...) vim.notify("[gnome.nvim] " .. table.concat({ ... }), level) end
 end
 
 M.debug = notify_fn(vim.log.levels.DEBUG)
