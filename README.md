@@ -5,6 +5,7 @@ GNOME + Neovim
 ## Features
 
 - [x] Color picker
+- [ ] Input prompt
 - [ ] Notification popup
 - [ ] Panel status
 
@@ -26,9 +27,9 @@ Default configuration:
 
 ```lua
 ---@class Gnome.Option
-M.options = {
+{
   color_dialog = {
-    default_format = "hex", -- rgb | rgba | hex | HEX
+    default_format = "hex", -- rgb | rgba | hex | HEX | hexa | HEXA
   },
 }
 ```
@@ -37,4 +38,4 @@ M.options = {
 
 Available commands:
 
-- `GnomeColor [rgb | rgba | hex | HEX]`: Opens a GTK color dialog and inserts the selected color at the current cursor position.
+- `GnomeColor [rgb | rgba | hex | HEX | hexa | HEXA]`: Opens a GTK color dialog and inserts the selected color at the current cursor position.
