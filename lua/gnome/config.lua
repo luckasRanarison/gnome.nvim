@@ -2,9 +2,10 @@ local M = {}
 
 ---@class Gnome.Option
 M.options = {
+  ---@type "v3" | "v4"
+  gtk_version = "v4",
+  override_notify = true,
   color_dialog = {
-    ---@type "v3" | "v4"
-    gtk = "v4",
     ---@type ColorFormat
     default_format = "hex",
   },

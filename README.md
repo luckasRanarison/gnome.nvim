@@ -6,7 +6,7 @@ GNOME + Neovim
 
 - [x] Color picker
 - [ ] Input prompt
-- [ ] Notification popup
+- [x] Notification popup
 - [ ] Panel status
 
 ## Installation
@@ -28,8 +28,9 @@ Default configuration:
 ```lua
 ---@type Gnome.Option
 local default = {
+  gtk_version = "v4", -- "v3" | "v4"
+  override_notify = true,
   color_dialog = {
-    gtk = "v4" -- "v3" | "v4"
     default_format = "hex", -- "rgb" | "rgba" | "hex" | "HEX" | "hexa" | "HEXA"
   },
 }
