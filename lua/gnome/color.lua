@@ -6,9 +6,22 @@ local M = {}
 ---@field blue number
 ---@field alpha number
 
----@alias ColorFormat "rgb" | "rgba" | "hex" | "HEX"
+---@alias ColorFormat
+---| "rgb"
+---| "rgba"
+---| "hex"
+---| "HEX"
+---| "hexa"
+---| "HEXA"
 
-M.formats = { "rgb", "rgba", "hex", "HEX" }
+M.formats = {
+  "rgb",
+  "rgba",
+  "hex",
+  "HEX",
+  "hexa",
+  "HEXA",
+}
 
 ---@param format string
 M.is_valid_format = function(format) return vim.tbl_contains(M.formats, format) end
@@ -20,8 +33,10 @@ M.format = function(color, format)
 
   if format == "rgb" then return string.format("rgb(%d, %d, %d)", r, g, b) end
   if format == "rgba" then return string.format("rgba(%d, %d, %d, %d)", r, g, b, a) end
-  if format == "hex" then return string.format("#%02x%02x%02x", r, g, b, a) end
-  if format == "HEX" then return string.format("#%02X%02X%02X", r, g, b, a) end
+  if format == "hex" then return string.format("#%02x%02x%02x", r, g, b) end
+  if format == "HEX" then return string.format("#%02X%02X%02X", r, g, b) end
+  if format == "hexa" then return string.format("#%02x%02x%02x%02x", r, g, b, a) end
+  if format == "HEXA" then return string.format("#%02X%02X%02X%02x", r, g, b, a) end
 end
 
 ---@return Color?
