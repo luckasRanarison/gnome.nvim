@@ -1,6 +1,6 @@
 # gnome.nvim
 
-GNOME + Neovim
+GNOME shell + Neovim
 
 ## Features
 
