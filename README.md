@@ -26,10 +26,11 @@ return {
 Default configuration:
 
 ```lua
----@class Gnome.Option
-{
+---@type Gnome.Option
+local default = {
   color_dialog = {
-    default_format = "hex", -- rgb | rgba | hex | HEX | hexa | HEXA
+    gtk = "v4" -- "v3" | "v4"
+    default_format = "hex", -- "rgb" | "rgba" | "hex" | "HEX" | "hexa" | "HEXA"
   },
 }
 ```

@@ -3,9 +3,8 @@ local M = {}
 ---@class Gnome.Option
 M.options = {
   color_dialog = {
-    -- TODO: add support for Gtk4
-    ---@type "v3"
-    gtk = "v3",
+    ---@type "v3" | "v4"
+    gtk = "v4",
     ---@type ColorFormat
     default_format = "hex",
   },

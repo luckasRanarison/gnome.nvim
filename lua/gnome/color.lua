@@ -1,5 +1,7 @@
 local M = {}
 
+local config = require("gnome.config")
+
 ---@class Color
 ---@field red number
 ---@field green number
@@ -43,8 +45,12 @@ end
 M.open_dialog = function()
   local lua_script_path = debug.getinfo(1, "S").source:sub(2)
   local lua_script_dir = vim.fn.fnamemodify(lua_script_path, ":p:h")
-  local gjs_script_path = lua_script_dir .. "/../../gjs/color-dialog-gtk3.js"
-  local cmd = string.format("gjs %s", gjs_script_path)
+
+  local gtk_version = config.options.color_dialog.gtk == "v3" and "3" or "4"
+  local gjs_script_dir = lua_script_dir .. "/../../gjs"
+  local gjs_script_path = gjs_script_dir .. "/color-dialog-gtk" .. gtk_version .. ".js"
+
+  local cmd = string.format("gjs %s -I %s 2>/dev/null", gjs_script_path, gjs_script_dir)
   local output = vim.fn.system(cmd)
 
   if output ~= "" then return vim.json.decode(output) end
